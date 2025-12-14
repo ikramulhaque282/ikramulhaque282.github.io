@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 300px;
     height: 100vh;
-    background: #040b14; /* Dark Blue/Black background */
+    background: #040b14;
     color: white;
     padding: 20px 15px;
     overflow-y: auto;
@@ -38,12 +38,20 @@ body {
     border-radius: 50%;
     border: 3px solid #2c2f3f;
     margin-bottom: 10px;
+    object-fit: cover; /* Ensures your photo fits perfectly */
 }
 
 .profile-header h1 {
     font-size: 24px;
     margin-bottom: 10px;
     font-weight: 600;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .social-links a {
@@ -55,13 +63,13 @@ body {
     background: #212431;
     color: #fff;
     border-radius: 50%;
-    margin: 0 5px;
     text-decoration: none;
     transition: 0.3s;
+    font-size: 16px;
 }
 
 .social-links a:hover {
-    background: #149ddd; /* Blue accent color */
+    background: #149ddd;
 }
 
 /* NAVIGATION */
@@ -88,6 +96,12 @@ body {
     color: #fff;
 }
 
+.sidebar nav ul li a i {
+    font-size: 24px;
+    padding-right: 8px;
+    color: #a8a9b4;
+}
+
 .sidebar nav ul li a::before {
     content: '';
     width: 0;
@@ -112,7 +126,7 @@ body {
 
 /* MAIN CONTENT AREA */
 .main-content {
-    margin-left: 300px; /* Width of sidebar */
+    margin-left: 300px;
     padding: 0;
     background: white;
     min-height: 100vh;
@@ -158,21 +172,29 @@ body {
     font-size: 20px;
     color: #333;
     margin-bottom: 20px;
+    font-style: italic;
 }
 
 .bio {
     margin-bottom: 20px;
     text-align: justify;
+    font-size: 16px;
 }
 
-.contact-info .item {
-    margin-bottom: 10px;
-    font-size: 14px;
+.btn-cv {
+    display: inline-block;
+    background: #149ddd;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 15px;
 }
 
-.contact-info i {
-    color: #149ddd;
-    margin-right: 10px;
+.btn-cv:hover {
+    background: #0e7baf;
 }
 
 /* SKILLS */
@@ -190,10 +212,10 @@ body {
     display: inline-block;
     background: #e4edf9;
     color: #050d18;
-    padding: 5px 15px;
+    padding: 8px 18px;
     border-radius: 50px;
     font-size: 14px;
-    margin: 0 5px 5px 0;
+    margin: 0 5px 8px 0;
     font-weight: 500;
 }
 
@@ -236,7 +258,7 @@ body {
 
 .resume-item .date {
     font-size: 14px;
-    color: #666;
+    color: #149ddd;
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -250,14 +272,16 @@ body {
 
 .project-card {
     background: #fff;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 0 0 15px rgba(0,0,0,0.08);
-    border-radius: 5px;
+    border-radius: 8px;
     transition: transform 0.3s;
+    border-bottom: 3px solid transparent;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
+    border-bottom: 3px solid #149ddd;
 }
 
 .project-card h3 {
@@ -265,25 +289,26 @@ body {
     color: #173b6c;
 }
 
-.project-tags span {
-    font-size: 12px;
-    background: #149ddd;
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-right: 5px;
-}
-
 .project-card p {
-    margin-top: 15px;
     font-size: 14px;
+    color: #555;
 }
 
-/* ACHIEVEMENTS */
+/* ACHIEVEMENTS / PUBLICATIONS */
 .achievement-list li {
     margin-bottom: 15px;
-    list-style-type: circle;
-    margin-left: 20px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+}
+
+.achievement-list li::before {
+    content: '➢';
+    position: absolute;
+    left: 0;
+    color: #149ddd;
+    font-size: 12px;
+    top: 3px;
 }
 
 /* MOBILE RESPONSIVE */
@@ -315,5 +340,8 @@ body {
     }
     .menu-toggle {
         display: flex;
+    }
+    .intro h1 {
+        font-size: 32px;
     }
 }
