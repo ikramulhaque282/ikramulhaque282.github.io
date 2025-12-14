@@ -4,7 +4,6 @@ const sidebar = document.querySelector('.sidebar');
 
 menuToggle.addEventListener('click', () => {
     sidebar.classList.toggle('active');
-    // Change icon from hamburger to X
     const icon = menuToggle.querySelector('i');
     if (sidebar.classList.contains('active')) {
         icon.classList.remove('fa-bars');
