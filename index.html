@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="profile-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>Your Name</h1>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </nav>
+        <div class="footer">
+            <p>&copy; 2025 Your Name</p>
+        </div>
+    </aside>
+
+    <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <main class="main-content">
+        
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="intro">
+                    <h1>Hello, I am <span class="highlight">Your Name</span></h1>
+                    <p class="subtitle">Software Engineer | Problem Solver | Tech Enthusiast</p>
+                    <p class="bio">
+                        I am a passionate Software Engineer currently working at <strong>[Your Company]</strong>. 
+                        I love system designing and finding solutions to complex problems. 
+                        My life motto is "never stop learning." Apart from coding, I enjoy watching football and playing video games.
+                    </p>
+                    <div class="contact-info">
+                        <div class="item"><i class="fas fa-map-marker-alt"></i> <span>Dhaka, Bangladesh</span></div>
+                        <div class="item"><i class="fas fa-envelope"></i> <span>email@example.com</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="tags">
+                        <span>C++</span><span>Java</span><span>JavaScript</span><span>Python</span><span>GoLang</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frontend & Backend</h3>
+                    <div class="tags">
+                        <span>React.js</span><span>Node.js</span><span>Express</span><span>Spring Boot</span><span>PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & DevOps</h3>
+                    <div class="tags">
+                        <span>Git</span><span>Docker</span><span>Kubernetes</span><span>AWS</span><span>Linux</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="resume-item">
+                    <div class="date">2019 - 2024</div>
+                    <h3>B.Sc. in Computer Science and Engineering</h3>
+                    <h4>Bangladesh University of Engineering and Technology (BUET)</h4>
+                    <p>CGPA: 3.92/4.00. Ranked top 15% of class.</p>
+                </div>
+
+                <div class="resume-item">
+                    <div class="date">2018</div>
+                    <h3>Higher Secondary Certificate</h3>
+                    <h4>Birshrestha Noor Mohammad Public College</h4>
+                    <p>GPA: 5.00/5.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="resume-item">
+                    <div class="date">June 2024 - Present</div>
+                    <h3>Software Engineer II</h3>
+                    <h4>Pridesys IT Ltd</h4>
+                    <p>Redesigned application to microservices architecture using Kafka. Incorporated CI/CD pipelines reducing dev time by 20%.</p>
+                </div>
+
+                <div class="resume-item">
+                    <div class="date">Nov 2023 - May 2024</div>
+                    <h3>Junior Software Engineer</h3>
+                    <h4>Pridesys IT Ltd</h4>
+                    <p>Migrated backend from Oracle Forms to Spring Boot 3. Optimized database queries reducing costs by 70%.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Algorithm Visualizer</h3>
+                        <div class="project-tags">
+                            <span>React</span><span>Algorithms</span>
+                        </div>
+                        <p>A web app visualizing 20+ algorithms step-by-step, helping 50k+ users understand complex logic.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>KagOJ</h3>
+                        <div class="project-tags">
+                            <span>Node.js</span><span>PostgreSQL</span>
+                        </div>
+                        <p>Online judge platform for hosting lab tests with automated code compilation and sandbox execution.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section">
+            <div class="container">
+                <h2 class="section-title">Achievements</h2>
+                <ul class="achievement-list">
+                    <li>
+                        <strong>NASA Space Apps Challenge 2020</strong> - Global Honorable Mention. Team "BUET Zenith".
+                    </li>
+                    <li>
+                        <strong>Therap Java Fest 2021</strong> - Champion. Developed "BloodBook" solution.
+                    </li>
+                    <li>
+                        <strong>Code Samurai 2022</strong> - 1st Runner Up. Project for JICA project monitoring.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
