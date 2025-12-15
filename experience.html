@@ -10,52 +10,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="profile-header">
-            <img src="profile.jpg" alt="Md. Iqramul Hoque">
-            <h1>Md. Iqramul Hoque</h1>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/iqramulhaque/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Ikramul-hq" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:ikramulh282@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=1WYAO1MAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i></a>
-            </div>
+
+<div class="main-container">
+
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Profile" class="profile-img">
+        <h1>Md. Iqramul Hoque</h1>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/iqramulhaque/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Ikramul-hq" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://scholar.google.com/citations?user=1WYAO1MAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i></a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html" class="active">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-            </ul>
+        <div class="contact-box">
+            <i class="fas fa-envelope"></i>
+            <div><span>Email</span><p>ikramulh282@gmail.com</p></div>
+        </div>
+        <div class="contact-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <div><span>Location</span><p>Dhaka, Bangladesh</p></div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <nav class="top-nav">
+            <a href="index.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html" class="active">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="publications.html">Publications</a>
         </nav>
-        <div class="footer"><p>&copy; 2025 Md. Iqramul Hoque</p></div>
-    </aside>
 
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <div class="content-body">
+            <h2 class="page-title">Experience</h2>
 
-    <main class="main-content">
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Experience</h2>
-                
-                <div class="resume-item">
-                    <div class="date">[Date Range]</div>
-                    <h3>Research Assistant</h3>
-                    <h4>SUST / [Lab Name]</h4>
-                    <p>Worked under Dr. Abul Mukid Mohammad Mukaddes and Dr. Manjurul Ahsan on interdisciplinary research bridging theoretical understanding and industrial application.</p>
-                </div>
-
-                <div class="resume-item">
-                    <div class="date">[Date Range]</div>
-                    <h3>[Your Internship Title]</h3>
-                    <h4>[Company Name]</h4>
-                    <p>Collaborated on impactful internship projects in manufacturing and data analytics.</p>
-                </div>
+            <div class="item-card">
+                <h3>Research Assistant</h3>
+                <h4>Shahjalal University of Science and Technology (SUST) | [Date Range]</h4>
+                <p>
+                    Worked under Dr. Abul Mukid Mohammad Mukaddes and Dr. Manjurul Ahsan on interdisciplinary research bridging theoretical understanding and industrial application.
+                    Focused on developing explainable AI models for smart manufacturing and materials science.
+                </p>
             </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+
+            <div class="item-card">
+                <h3>[Your Internship Role]</h3>
+                <h4>[Company Name] | [Date Range]</h4>
+                <p>
+                    Collaborated on impactful internship projects in manufacturing and data analytics. engaged in leadership roles within student organizations.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
