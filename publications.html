@@ -10,57 +10,60 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="profile-header">
-            <img src="profile.jpg" alt="Md. Iqramul Hoque">
-            <h1>Md. Iqramul Hoque</h1>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/iqramulhaque/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Ikramul-hq" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:ikramulh282@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://scholar.google.com/citations?user=1WYAO1MAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i></a>
-            </div>
+
+<div class="main-container">
+
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Profile" class="profile-img">
+        <h1>Md. Iqramul Hoque</h1>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/iqramulhaque/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Ikramul-hq" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://scholar.google.com/citations?user=1WYAO1MAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i></a>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html" class="active">Publications</a></li>
-            </ul>
+        <div class="contact-box">
+            <i class="fas fa-envelope"></i>
+            <div><span>Email</span><p>ikramulh282@gmail.com</p></div>
+        </div>
+        <div class="contact-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <div><span>Location</span><p>Dhaka, Bangladesh</p></div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <nav class="top-nav">
+            <a href="index.html">About</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="publications.html" class="active">Publications</a>
         </nav>
-        <div class="footer"><p>&copy; 2025 Md. Iqramul Hoque</p></div>
-    </aside>
 
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <div class="content-body">
+            <h2 class="page-title">Selected Works</h2>
 
-    <main class="main-content">
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Selected Publications</h2>
-                
-                <ul class="achievement-list">
-                    <li>
-                        <strong>Clinical Multi-modal LLM Deployment</strong>
-                        <br>Published at <em>BioSafe GenAI 2025</em>.
-                        <br><a href="#" style="color:#149ddd; font-size:14px;">[PDF]</a>
-                    </li>
-                    <li style="margin-top:20px;">
-                        <strong>Optimization of Biomining using Digital Twins</strong>
-                        <br><em>Journal of Cleaner Production (Under Review)</em>.
-                        <br><a href="#" style="color:#149ddd; font-size:14px;">[PDF]</a>
-                    </li>
-                    </ul>
-
-                <br><br>
-                <a href="https://scholar.google.com/citations?user=1WYAO1MAAAAJ&hl=en" target="_blank" class="btn-cv">
-                    View Google Scholar Profile <i class="fas fa-external-link-alt"></i>
-                </a>
-
+            <div class="item-card">
+                <h3>Clinical Multi-modal LLM Deployment</h3>
+                <h4 style="color:#ffb727;">Published at BioSafe GenAI 2025</h4>
+                <p>Investigating the safe deployment and evaluation of multi-modal Large Language Models in clinical settings.</p>
+                <a href="#" style="font-size:12px; color:#fff; text-decoration:underline;">[PDF Link]</a>
             </div>
-        </section>
-    </main>
-    <script src="script.js"></script>
+
+            <div class="item-card">
+                <h3>Optimization of Biomining using Digital Twins</h3>
+                <h4 style="color:#ffb727;">Journal of Cleaner Production (Under Review)</h4>
+                <p>A study on leveraging Digital Twin frameworks to optimize biomining processes for sustainability.</p>
+            </div>
+
+            <a href="https://scholar.google.com/citations?user=1WYAO1MAAAAJ&hl=en" target="_blank" 
+               style="display:inline-block; margin-top:20px; background:#333; color:#fff; padding:10px 20px; border-radius:5px; text-decoration:none;">
+               View Full List on Google Scholar <i class="fas fa-external-link-alt"></i>
+            </a>
+
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
