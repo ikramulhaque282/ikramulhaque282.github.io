@@ -1,4 +1,17 @@
-/* RESET */
+/* ===========================
+   1. RESET & GLOBAL STYLES
+=========================== */
+/* NEW: Change Text Selection Color to Yellow */
+::selection {
+    background: #ffb727; /* Theme Yellow */
+    color: #111;         /* Dark text for readability */
+}
+/* For Firefox specifically */
+::-moz-selection {
+    background: #ffb727;
+    color: #111;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,46 +24,55 @@ body {
     color: #ccc;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* CHANGE: Changed from 'center' to 'flex-start' to stop vertical bouncing */
+    align-items: flex-start; 
     min-height: 100vh;
-    padding: 40px 20px; /* Space on edges for mobile */
+    /* CHANGE: Increased top padding for consistent spacing */
+    padding: 80px 20px; 
 }
 
-/* MAIN LAYOUT CONTAINER */
+/* ===========================
+   2. MAIN LAYOUT CONTAINER
+=========================== */
 .main-container {
     display: flex;
-    max-width: 1200px;
+    max-width: 1100px; /* Slightly tighter max-width for a cleaner look */
     width: 100%;
-    gap: 30px; /* Gap between Profile and Content */
-    align-items: flex-start; /* Aligns top */
+    gap: 40px; /* Gap between Profile and Content */
+    align-items: flex-start; /* Aligns both boxes to the top */
 }
 
-/* LEFT COLUMN: PROFILE CARD */
+/* ===========================
+   3. LEFT COLUMN: PROFILE CARD
+=========================== */
 .profile-card {
-    width: 350px;
+    width: 320px;
     background: #1e1e1e; /* Dark card color */
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
+    /* Keeps the sidebar fixed while scrolling right side */
     position: sticky;
-    top: 40px;
+    top: 80px; /* Matches body padding */
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     flex-shrink: 0; /* Prevents shrinking */
+    border: 1px solid #2a2a2a;
 }
 
 .profile-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px; /* Rounded square like the image */
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
     object-fit: cover;
     margin-bottom: 20px;
-    border: 4px solid #2d2d2d;
+    border: 3px solid #2d2d2d;
 }
 
 .profile-card h1 {
-    font-size: 24px;
+    font-size: 22px;
     color: #fff;
     margin-bottom: 15px;
+    font-weight: 600;
 }
 
 /* SOCIAL ICONS */
@@ -62,21 +84,29 @@ body {
 }
 
 .social-links a {
-    color: #888;
+    color: #aaa;
     font-size: 18px;
     transition: 0.3s;
+    background: #252525;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 .social-links a:hover {
-    color: #ffb727; /* Gold/Yellow accent */
+    color: #111;
+    background: #ffb727; /* Gold/Yellow accent */
 }
 
 /* CONTACT INFO BOXES */
 .contact-box {
     background: #252525;
-    padding: 15px;
+    padding: 12px 15px;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     text-align: left;
     display: flex;
     align-items: center;
@@ -85,7 +115,7 @@ body {
 
 .contact-box i {
     color: #ffb727;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .contact-box div span {
@@ -93,48 +123,80 @@ body {
     font-size: 10px;
     text-transform: uppercase;
     color: #666;
+    letter-spacing: 1px;
 }
 
 .contact-box div p {
     font-size: 13px;
-    color: #fff;
+    color: #ddd;
+    word-break: break-all; /* Ensures long emails don't break layout */
 }
 
-/* RIGHT COLUMN: CONTENT AREA */
+/* NEW: Sidebar CV Button Style */
+.btn-cv-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    color: #ffb727;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #ffb727;
+    transition: 0.3s;
+}
+
+.btn-cv-sidebar:hover {
+    background: #ffb727;
+    color: #111;
+}
+
+
+/* ===========================
+   4. RIGHT COLUMN: CONTENT AREA
+=========================== */
 .content-card {
     flex-grow: 1;
     background: #1e1e1e;
-    border-radius: 10px;
-    padding: 0; /* Padding handled inside inner sections */
+    border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    overflow: hidden;
+    overflow: hidden; /* Ensures rounded corners contain children */
+    border: 1px solid #2a2a2a;
+    min-height: 600px; /* Ensures consistency even on short pages */
 }
 
 /* TOP NAVIGATION BAR */
 .top-nav {
     background: #252525;
     padding: 20px 30px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #2a2a2a;
     display: flex;
     justify-content: flex-end; /* Pushes links to the right */
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
 .top-nav a {
-    color: #ccc;
+    color: #aaa;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
 .top-nav a:hover, .top-nav a.active {
     color: #ffb727; /* Gold accent */
+    background: rgba(255, 183, 39, 0.1); /* Subtle yellow background */
 }
 
-/* CONTENT SECTIONS */
+/* CONTENT SECTIONS BODY */
 .content-body {
     padding: 40px;
 }
@@ -144,13 +206,14 @@ body {
     color: #fff;
     margin-bottom: 30px;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    font-weight: 700;
 }
 
 .page-title::after {
     content: '';
     position: absolute;
-    width: 50px;
+    width: 60px;
     height: 4px;
     background: #ffb727;
     bottom: 0;
@@ -158,46 +221,109 @@ body {
     border-radius: 2px;
 }
 
+/* Standard Text Typography */
 .text-content p {
     margin-bottom: 20px;
-    line-height: 1.7;
-    color: #aaa;
+    line-height: 1.8;
+    color: #bbb;
+    font-size: 15px;
 }
 
-/* SHARED STYLES (Projects/Education/etc) */
+/* ===========================
+   5. SHARED ITEM CARDS (Experience/Projects/etc)
+=========================== */
 .item-card {
     background: #252525;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border-left: 3px solid #ffb727;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #ffb727; /* Yellow accent border */
+    transition: transform 0.3s;
+}
+
+.item-card:hover {
+    transform: translateX(5px); /* Subtle hover effect */
 }
 
 .item-card h3 {
     color: #fff;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
 .item-card h4 {
     font-size: 14px;
-    color: #888;
-    margin-bottom: 10px;
+    color: #ffb727; /* Highlight subtitle/date in yellow */
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
+.item-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Tags styles */
+.tags {
+    margin-bottom: 15px;
+}
 .tags span {
+    display: inline-block;
     background: #333;
     color: #ccc;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    margin-right: 5px;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    margin-right: 6px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-/* RESPONSIVE (MOBILE) */
+/* Links inside item cards (like PDF links) */
+.item-card a.link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #ffb727;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* Google Scholar Button (Publications Page) */
+.scholar-btn {
+   display:inline-flex;
+   align-items: center;
+   gap: 10px;
+   margin-top:30px;
+   background:#252525;
+   color:#fff;
+   padding:12px 25px;
+   border-radius:50px;
+   text-decoration:none;
+   font-weight: 500;
+   transition: 0.3s;
+   border: 2px solid #252525;
+}
+
+.scholar-btn:hover {
+    border-color: #ffb727;
+    color: #ffb727;
+}
+
+/* ===========================
+   6. RESPONSIVE (MOBILE)
+=========================== */
 @media (max-width: 900px) {
+    body {
+        padding: 40px 15px;
+        align-items: flex-start;
+    }
+    
     .main-container {
         flex-direction: column;
-        align-items: center;
+        gap: 30px;
     }
     
     .profile-card {
@@ -208,9 +334,15 @@ body {
 
     .top-nav {
         justify-content: center;
+        padding: 15px;
     }
     
     .top-nav a {
-        margin: 5px 10px;
+        margin: 5px;
+        font-size: 11px;
+    }
+
+    .content-body {
+        padding: 25px;
     }
 }
