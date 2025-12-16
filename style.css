@@ -1,12 +1,10 @@
 /* ===========================
    1. RESET & GLOBAL STYLES
 =========================== */
-/* NEW: Change Text Selection Color to Yellow */
 ::selection {
-    background: #ffb727; /* Theme Yellow */
-    color: #111;         /* Dark text for readability */
+    background: #ffb727; 
+    color: #111;         
 }
-/* For Firefox specifically */
 ::-moz-selection {
     background: #ffb727;
     color: #111;
@@ -20,15 +18,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #111; /* Very dark background */
+    background-color: #111;
     color: #ccc;
     display: flex;
     justify-content: center;
-    /* CHANGE: Changed from 'center' to 'flex-start' to stop vertical bouncing */
     align-items: flex-start; 
     min-height: 100vh;
-    /* CHANGE: Increased top padding for consistent spacing */
-    padding: 80px 20px; 
+    padding: 60px 20px; 
 }
 
 /* ===========================
@@ -36,10 +32,10 @@ body {
 =========================== */
 .main-container {
     display: flex;
-    max-width: 1100px; /* Slightly tighter max-width for a cleaner look */
+    max-width: 1100px; 
     width: 100%;
-    gap: 40px; /* Gap between Profile and Content */
-    align-items: flex-start; /* Aligns both boxes to the top */
+    gap: 40px; 
+    align-items: flex-start; 
 }
 
 /* ===========================
@@ -47,15 +43,14 @@ body {
 =========================== */
 .profile-card {
     width: 320px;
-    background: #1e1e1e; /* Dark card color */
+    background: #1e1e1e;
     padding: 30px;
     border-radius: 12px;
     text-align: center;
-    /* Keeps the sidebar fixed while scrolling right side */
     position: sticky;
-    top: 80px; /* Matches body padding */
+    top: 60px; /* Matches body padding */
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    flex-shrink: 0; /* Prevents shrinking */
+    flex-shrink: 0; 
     border: 1px solid #2a2a2a;
 }
 
@@ -75,7 +70,6 @@ body {
     font-weight: 600;
 }
 
-/* SOCIAL ICONS */
 .social-links {
     display: flex;
     justify-content: center;
@@ -98,10 +92,9 @@ body {
 
 .social-links a:hover {
     color: #111;
-    background: #ffb727; /* Gold/Yellow accent */
+    background: #ffb727; 
 }
 
-/* CONTACT INFO BOXES */
 .contact-box {
     background: #252525;
     padding: 12px 15px;
@@ -129,10 +122,9 @@ body {
 .contact-box div p {
     font-size: 13px;
     color: #ddd;
-    word-break: break-all; /* Ensures long emails don't break layout */
+    word-break: break-all;
 }
 
-/* NEW: Sidebar CV Button Style */
 .btn-cv-sidebar {
     display: flex;
     align-items: center;
@@ -154,7 +146,6 @@ body {
     color: #111;
 }
 
-
 /* ===========================
    4. RIGHT COLUMN: CONTENT AREA
 =========================== */
@@ -163,18 +154,17 @@ body {
     background: #1e1e1e;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    overflow: hidden; /* Ensures rounded corners contain children */
+    overflow: hidden; 
     border: 1px solid #2a2a2a;
-    min-height: 600px; /* Ensures consistency even on short pages */
+    min-height: 600px;
 }
 
-/* TOP NAVIGATION BAR */
 .top-nav {
     background: #252525;
     padding: 20px 30px;
     border-bottom: 1px solid #2a2a2a;
     display: flex;
-    justify-content: flex-end; /* Pushes links to the right */
+    justify-content: flex-end; 
     flex-wrap: wrap;
     gap: 15px;
 }
@@ -192,11 +182,10 @@ body {
 }
 
 .top-nav a:hover, .top-nav a.active {
-    color: #ffb727; /* Gold accent */
-    background: rgba(255, 183, 39, 0.1); /* Subtle yellow background */
+    color: #ffb727; 
+    background: rgba(255, 183, 39, 0.1); 
 }
 
-/* CONTENT SECTIONS BODY */
 .content-body {
     padding: 40px;
 }
@@ -204,9 +193,9 @@ body {
 .page-title {
     font-size: 32px;
     color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     font-weight: 700;
 }
 
@@ -221,7 +210,7 @@ body {
     border-radius: 2px;
 }
 
-/* Standard Text Typography */
+/* Text Content */
 .text-content p {
     margin-bottom: 20px;
     line-height: 1.8;
@@ -230,119 +219,112 @@ body {
 }
 
 /* ===========================
-   5. SHARED ITEM CARDS (Experience/Projects/etc)
+   5. TIMELINE STYLES (NEW!)
 =========================== */
-.item-card {
-    background: #252525;
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    border-left: 4px solid #ffb727; /* Yellow accent border */
-    transition: transform 0.3s;
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #333; /* The vertical line */
 }
 
-.item-card:hover {
-    transform: translateX(5px); /* Subtle hover effect */
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 20px;
 }
 
-.item-card h3 {
-    color: #fff;
-    margin-bottom: 8px;
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* The Yellow Dot */
+.timeline-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #ffb727;
+    border-radius: 50%;
+    left: -27px; /* Aligns with the border line */
+    top: 5px;
+    border: 2px solid #1e1e1e; /* Creates a gap effect */
+    box-shadow: 0 0 0 2px #ffb727; /* Double ring effect */
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.timeline-header h3 {
     font-size: 18px;
-}
-
-.item-card h4 {
-    font-size: 14px;
-    color: #ffb727; /* Highlight subtitle/date in yellow */
-    margin-bottom: 15px;
-    font-weight: 500;
-}
-
-.item-card p {
-    color: #aaa;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-/* Tags styles */
-.tags {
-    margin-bottom: 15px;
-}
-.tags span {
-    display: inline-block;
-    background: #333;
-    color: #ccc;
-    padding: 5px 12px;
-    border-radius: 50px;
-    font-size: 11px;
-    margin-right: 6px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
+    color: #fff;
     font-weight: 600;
+    margin: 0;
 }
 
-/* Links inside item cards (like PDF links) */
-.item-card a.link-btn {
-    display: inline-block;
-    margin-top: 15px;
-    font-size: 13px;
+.timeline-date {
+    font-size: 14px;
     color: #ffb727;
-    text-decoration: underline;
     font-weight: 500;
 }
 
-/* Google Scholar Button (Publications Page) */
-.scholar-btn {
-   display:inline-flex;
-   align-items: center;
-   gap: 10px;
-   margin-top:30px;
-   background:#252525;
-   color:#fff;
-   padding:12px 25px;
-   border-radius:50px;
-   text-decoration:none;
-   font-weight: 500;
-   transition: 0.3s;
-   border: 2px solid #252525;
+.timeline-degree {
+    font-size: 15px;
+    color: #ccc;
+    margin-bottom: 5px;
+    font-weight: 500;
+    display: block;
+    width: 100%;
 }
 
-.scholar-btn:hover {
-    border-color: #ffb727;
-    color: #ffb727;
+.timeline-grade {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.timeline-desc {
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Notable Courses Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 10px;
+    margin-top: 20px;
+    background: #252525;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.courses-grid span {
+    font-size: 13px;
+    color: #bbb;
 }
 
 /* ===========================
-   6. RESPONSIVE (MOBILE)
+   6. RESPONSIVE
 =========================== */
 @media (max-width: 900px) {
-    body {
-        padding: 40px 15px;
-        align-items: flex-start;
-    }
-    
     .main-container {
         flex-direction: column;
-        gap: 30px;
     }
-    
     .profile-card {
         width: 100%;
         position: relative;
         top: 0;
     }
-
     .top-nav {
         justify-content: center;
-        padding: 15px;
     }
-    
-    .top-nav a {
-        margin: 5px;
-        font-size: 11px;
-    }
-
-    .content-body {
-        padding: 25px;
+    .courses-grid {
+        grid-template-columns: 1fr; /* 1 col on mobile */
     }
 }
