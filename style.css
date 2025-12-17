@@ -1,6 +1,7 @@
 /* ===========================
    1. RESET & GLOBAL STYLES
 =========================== */
+/* Yellow Text Selection */
 ::selection {
     background: #ffb727; 
     color: #111;         
@@ -18,13 +19,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #111;
+    background-color: #111; /* Very dark background */
     color: #ccc;
     display: flex;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: flex-start; /* Stops vertical bouncing */
     min-height: 100vh;
-    padding: 60px 20px; 
+    padding: 60px 20px; /* Consistent top padding */
 }
 
 /* ===========================
@@ -125,6 +126,7 @@ body {
     word-break: break-all;
 }
 
+/* Sidebar CV Button */
 .btn-cv-sidebar {
     display: flex;
     align-items: center;
@@ -159,6 +161,7 @@ body {
     min-height: 600px;
 }
 
+/* Top Navigation */
 .top-nav {
     background: #252525;
     padding: 20px 30px;
@@ -186,6 +189,7 @@ body {
     background: rgba(255, 183, 39, 0.1); 
 }
 
+/* Content Body */
 .content-body {
     padding: 40px;
 }
@@ -210,7 +214,7 @@ body {
     border-radius: 2px;
 }
 
-/* Text Content */
+/* Text Content Typography */
 .text-content p {
     margin-bottom: 20px;
     line-height: 1.8;
@@ -219,7 +223,90 @@ body {
 }
 
 /* ===========================
-   5. TIMELINE STYLES (NEW!)
+   5. SHARED ITEM CARDS (Projects/Experience)
+=========================== */
+.item-card {
+    background: #252525;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border-left: 4px solid #ffb727; 
+    transition: transform 0.3s;
+}
+
+.item-card:hover {
+    transform: translateX(5px); 
+}
+
+.item-card h3 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.item-card h4 {
+    font-size: 14px;
+    color: #ffb727; 
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.item-card p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Tags (for Projects) */
+.tags {
+    margin-bottom: 15px;
+}
+.tags span {
+    display: inline-block;
+    background: #333;
+    color: #ccc;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 11px;
+    margin-right: 6px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* PDF Links */
+.item-card a.link-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #ffb727;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* Google Scholar Button */
+.scholar-btn {
+   display:inline-flex;
+   align-items: center;
+   gap: 10px;
+   margin-top:30px;
+   background:#252525;
+   color:#fff;
+   padding:12px 25px;
+   border-radius:50px;
+   text-decoration:none;
+   font-weight: 500;
+   transition: 0.3s;
+   border: 2px solid #252525;
+}
+
+.scholar-btn:hover {
+    border-color: #ffb727;
+    color: #ffb727;
+}
+
+/* ===========================
+   6. TIMELINE STYLES (Education)
 =========================== */
 .timeline {
     position: relative;
@@ -250,12 +337,13 @@ body {
     box-shadow: 0 0 0 2px #ffb727; /* Double ring effect */
 }
 
+/* Header container for Title + Right-side Info */
 .timeline-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 10px;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .timeline-header h3 {
@@ -263,27 +351,38 @@ body {
     color: #fff;
     font-weight: 600;
     margin: 0;
+    flex: 1; 
+}
+
+/* Right Side Container (Date + CGPA) */
+.timeline-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px; 
+    flex-shrink: 0; 
 }
 
 .timeline-date {
     font-size: 14px;
-    color: #ffb727;
-    font-weight: 500;
+    color: #aaa;
+    font-weight: 400;
+}
+
+.timeline-cgpa {
+    font-size: 15px;
+    color: #ffb727; /* Yellow highlight */
+    font-weight: 600;
 }
 
 .timeline-degree {
     font-size: 15px;
     color: #ccc;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     font-weight: 500;
     display: block;
     width: 100%;
-}
-
-.timeline-grade {
-    font-size: 14px;
-    color: #888;
-    margin-top: 5px;
 }
 
 .timeline-desc {
@@ -296,7 +395,7 @@ body {
 /* Notable Courses Grid */
 .courses-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-columns: 1fr 1fr; 
     gap: 10px;
     margin-top: 20px;
     background: #252525;
@@ -310,7 +409,7 @@ body {
 }
 
 /* ===========================
-   6. RESPONSIVE
+   7. RESPONSIVE
 =========================== */
 @media (max-width: 900px) {
     .main-container {
@@ -326,5 +425,14 @@ body {
     }
     .courses-grid {
         grid-template-columns: 1fr; /* 1 col on mobile */
+    }
+    .timeline-header {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .timeline-meta {
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 10px;
     }
 }
